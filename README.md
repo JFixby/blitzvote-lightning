@@ -1,3 +1,5 @@
+# blitzvote
+
 # Animal Kingdom Sample app
 
 This sample app allows a user to create their own animal kingdom. They create their own
@@ -64,3 +66,4 @@ This code includes deployment settings for Firebase and Netlify in the `cors` di
 | Netlify  	| _headers, _redirects       	|
 
 If you're deploying this on another service, you'll need to set CORS headers appropriately for that service.
+=======
