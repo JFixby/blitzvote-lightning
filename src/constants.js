@@ -28,7 +28,13 @@ export const TERRITORIES = [
     id: 'tundra',
     name: 'Tundra',
     superpower: 'Let it snow!'
-  }
+  },
+  {
+    id: 'westeros',
+    name: 'Westeros',
+    superpower: 'oooooo!'
+  },
+  
 ]
 
 export const ME_FILENAME = 'me.json'

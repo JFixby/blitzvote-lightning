@@ -1,0 +1,1 @@
+lncli --network=testnet --rpcserver=[2001:a18:a:c3::11]:10009 --tlscertpath=/home/stikhomirov/.lnd/tls.cert --macaroonpath=admin.macaroon walletbalance
