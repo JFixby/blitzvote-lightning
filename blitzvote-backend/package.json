@@ -13,7 +13,9 @@
     "dependencies": {
         "grpc": "^1.19.0",
         "koa": "^2.7.0",
+        "koa-json": "^2.0.2",
         "koa-router": "^7.4.0",
+        "nodeman": "^1.1.2",
         "nodemon": "^1.18.10"
     }
 }
