@@ -1,22 +1,14 @@
 'use strict'
-var Koa = require('koa');
-var Router = require('koa-router');
-//var BodyParser = require('koa-body');
-const app = new Koa();
+var koa = require('koa');
+var router = require('koa-router');
+var app = new koa();
 
-var invoices = require('./invoices.js')
-app.use(invoices.routes())
+var _ = router();              //Instantiate the router
+_.get('/hello', getMessage);   // Define routes
 
-app.use(async ctx => {
-  ctx.body = 'Hello World';
-});
+function *getMessage() {
+   this.body = "Hello world!";
+};
 
-
-
-
-//Routes will go here
-
-module.exports = router;
-
+app.use(_.routes());           //Use the routes defined using the router
 app.listen(3000);
-
