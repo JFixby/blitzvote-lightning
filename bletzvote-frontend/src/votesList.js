@@ -34,11 +34,13 @@ class VotesList extends Component {
   }
 
   render() {
-    fetch("http://localhost:8080/listInvoices",
-        {
-            // mode: "no-cors",
-        })
-      .then(res => {console.log(JSON.stringify(res))})
+      const Http = new XMLHttpRequest();
+      const url = 'http://localhost:8080/listInvoices';
+      Http.open("GET", url);
+      Http.send();
+      Http.onreadystatechange = (e) => {
+          console.log(Http.responseText)
+      }
 
 
 
