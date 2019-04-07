@@ -60,3 +60,48 @@ export const OTHER_KINGDOMS = [
       ruler: 'ma1222042.id.blockstack'
   }
 ]
+
+
+export const DEFAULTCONFIGUREDVOTE = {
+  title: "Which cryptocurrency is the coolest?",
+  options: [
+    {
+      name: "Bitcoin",
+      invoice: "13471118"
+    },
+    {
+      name: "Ethereum",
+      invoice: "dsfargegs;"
+    },
+    {
+      name: "Nano",
+      invoice: "hunter2"
+    },
+  ]
+}
+
+export const DEFAULTVOTERESULTS = {
+  title: "Which cryptocurrency is the coolest?",
+  votes: [
+    {
+      vote: "Bitcoin",
+      voter: "Steve"
+    },
+    {
+      vote: "Ethereum",
+      voter: "Dave"
+    },
+    {
+      vote: "Nano",
+      voter: "Kev"
+    },
+    {
+      vote: "Bitcoin",
+      voter: "Fiona"
+    },
+    {
+      vote: "Bitcoin",
+      voter: "Rob"
+    }
+  ]
+}

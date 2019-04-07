@@ -4,6 +4,8 @@ import { UserSession } from 'blockstack'
 import EditMe from './EditMe'
 import Kingdom from './Kingdom'
 import NavBar from './NavBar'
+import VotesList from './votesList'
+import VotesTallyList from './votesTallyList'
 import OptionsList from './OptionsList'
 import OtherKingdoms from './OtherKingdoms'
 import { appConfig, ME_FILENAME } from './constants'
@@ -61,15 +63,16 @@ class SignedIn extends Component {
     window.location = '/'
   }
 
+
   render() {
     const username = this.userSession.loadUserData().username
     const me = this.state.me
     const redirectToMe = this.state.redirectToMe
     if(redirectToMe) {
       // User hasn't configured her animal
-      if(window.location.pathname !== '/me') {
+      if(window.location.pathname !== '/vote') {
         return (
-          <Redirect to="/me" />
+          <Redirect to="/vote" />
         )
       }
     }
@@ -86,60 +89,26 @@ class SignedIn extends Component {
       <NavBar username={username} signOut={this.signOut}/>
       <Switch>
               <Route
-                path='/animals'
+                path='/vote'
                 render={
-                  routeProps => <OptionsList
-                  type="animals"
+                  routeProps => <VotesList
+                  type="Options"
                   {...routeProps} />
                 }
               />
               <Route
-                path='/territories'
+                path='/tally'
                 render={
-                  routeProps => <OptionsList
-                  type="territories"
+                  routeProps => <VotesTallyList
+                  type="Results"
                   {...routeProps} />
                 }
               />
               <Route
-                path='/others'
+                path='/create'
                 render={
                   routeProps => <OtherKingdoms
                   type="territories"
-                  {...routeProps} />
-                }
-              />
-              <Route
-                path='/me'
-                render={
-                  routeProps => <EditMe
-                  me={me}
-                  saveMe={this.saveMe}
-                  username={username}
-                  {...routeProps} />
-                }
-              />
-              <Route
-                path={`/kingdom/${username}`}
-                render={
-                  routeProps => <Kingdom
-                  myKingdom={true}
-                  protocol={window.location.protocol}
-                  ruler={username}
-                  currentUsername={username}
-                  realm={window.location.origin.split('//')[1]}
-                  {...routeProps} />
-                }
-              />
-              <Route
-                path='/kingdom/:protocol/:realm/:ruler'
-                render={
-                  routeProps => <Kingdom
-                  myKingdom={false}
-                  protocol={routeProps.match.params.protocol}
-                  realm={routeProps.match.params.realm}
-                  ruler={routeProps.match.params.ruler}
-                  currentUsername={username}
                   {...routeProps} />
                 }
               />
