@@ -14,7 +14,7 @@ export const add = (x, y) => {
 
         res.writeHead(200, {'Content-Type': 'text/html'});
         res.write('Hello World!');
-        res.write(ballance + '')
+        res.write(JSON.stringify(ballance))
         res.end();
     }).listen(8080);
 
