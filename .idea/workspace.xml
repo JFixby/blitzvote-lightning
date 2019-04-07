@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd22aa30-f0d9-4fda-80aa-cdcb612fc996" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/bletzvote-frontend/src/votesList.js" beforeDir="false" afterPath="$PROJECT_DIR$/bletzvote-frontend/src/votesList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bletzvote-backend/back2/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/bletzvote-backend/back2/data.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,7 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.58635396">
+    <splitter split-orientation="horizontal" split-proportion="0.42928216">
       <split-first>
         <leaf>
           <file leaf-file-name="start.js" pinned="false" current-in-tab="false">
@@ -28,7 +28,7 @@
             <entry file="file://$PROJECT_DIR$/bletzvote-backend/back2/data.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="579">
-                  <caret line="95" column="33" selection-start-line="95" selection-start-column="33" selection-end-line="95" selection-end-column="33" />
+                  <caret line="101" column="33" selection-start-line="101" selection-start-column="33" selection-end-line="101" selection-end-column="33" />
                   <folding>
                     <element signature="e#96#117#0" />
                   </folding>
@@ -39,8 +39,8 @@
           <file leaf-file-name="votesList.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/bletzvote-frontend/src/votesList.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="476">
-                  <caret line="39" column="18" lean-forward="true" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
+                <state relative-caret-position="578">
+                  <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
                   <folding>
                     <element signature="e#113#146#0" expanded="true" />
                   </folding>
@@ -88,8 +88,8 @@
           <file leaf-file-name="data.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/bletzvote-backend/back2/data.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="302">
-                  <caret line="79" column="55" lean-forward="true" selection-start-line="79" selection-start-column="55" selection-end-line="79" selection-end-column="55" />
+                <state relative-caret-position="836">
+                  <caret line="121" column="2" lean-forward="true" selection-start-line="121" selection-start-column="2" selection-end-line="121" selection-end-column="2" />
                 </state>
               </provider>
             </entry>
@@ -121,8 +121,8 @@
         <option value="$PROJECT_DIR$/bletzvote-backend/back2/start.js" />
         <option value="$PROJECT_DIR$/blitzvote-backend/app.js" />
         <option value="$PROJECT_DIR$/bletzvote-backend/back2/GrpcCaller.js" />
-        <option value="$PROJECT_DIR$/bletzvote-backend/back2/data.js" />
         <option value="$PROJECT_DIR$/bletzvote-frontend/src/votesList.js" />
+        <option value="$PROJECT_DIR$/bletzvote-backend/back2/data.js" />
       </list>
     </option>
   </component>
@@ -1966,9 +1966,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#96#117#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2077,9 +2074,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="27" lean-forward="true" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
-          <folding>
-            <element signature="e#96#117#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2195,23 +2189,20 @@
     <entry file="file://$PROJECT_DIR$/blitzvote-backend/invoices.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/bletzvote-backend/back2/data.js">
+    <entry file="file://$PROJECT_DIR$/bletzvote-frontend/src/votesList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
-          <caret line="95" column="33" selection-start-line="95" selection-start-column="33" selection-end-line="95" selection-end-column="33" />
+        <state relative-caret-position="578">
+          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
           <folding>
-            <element signature="e#96#117#0" />
+            <element signature="e#113#146#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bletzvote-frontend/src/votesList.js">
+    <entry file="file://$PROJECT_DIR$/bletzvote-backend/back2/data.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="39" column="18" lean-forward="true" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
-          <folding>
-            <element signature="e#113#146#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="836">
+          <caret line="121" column="2" lean-forward="true" selection-start-line="121" selection-start-column="2" selection-end-line="121" selection-end-column="2" />
         </state>
       </provider>
     </entry>
