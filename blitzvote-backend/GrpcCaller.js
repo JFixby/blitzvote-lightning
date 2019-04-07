@@ -13,7 +13,7 @@ var macaroonCreds = grpc.credentials.createFromMetadataGenerator(function (args,
 var creds = grpc.credentials.combineChannelCredentials(sslCreds, macaroonCreds);
 var lightning = new lnrpc.Lightning('[2001:a18:a:c3::11]:10009', creds);
 
-class GrpcCaller {
+module.exports = class GrpcCaller {
     constructor() {
     }
 

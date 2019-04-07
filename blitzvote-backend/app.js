@@ -11,8 +11,9 @@ _.post('/invoices', postMessage);
 
 function getMessage(ctx) {
   console.log("start web server");
-  var grpc_caller = new Grpc()
-  var ballance = grpc_caller.get_wallet_balance()
+  
+  var grpc = new Grpc()
+  var ballance = grpc.get_wallet_balance()
   return json(ballance)
 }
 
