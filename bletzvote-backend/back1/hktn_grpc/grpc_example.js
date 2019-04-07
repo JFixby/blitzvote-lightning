@@ -1,5 +1,5 @@
 var fs = require('fs');
-var grpc = require('grpc');
+var grpc = require('hktn_grpc');
 var lnrpc = grpc.load('rpc.proto').lnrpc;
 process.env.GRPC_SSL_CIPHER_SUITES = 'HIGH+ECDSA'
 var lndCert = fs.readFileSync('tls.cert');
