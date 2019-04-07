@@ -12,18 +12,22 @@ var macaroonCreds = grpc.credentials.createFromMetadataGenerator(function(args, 
   });
 var creds = grpc.credentials.combineChannelCredentials(sslCreds, macaroonCreds);
 var lightning = new lnrpc.Lightning('[2001:a18:a:c3::11]:10009', creds);
-var request = { 
-    //we store the candidate name (id) in the field memo
-    //maybe the name should be taken from the selected candidate
-    memo: 'candidate 1', 
-  } 
-lightning.addInvoice(request, function(err, response) {
+var request = { } 
+lightning.listInvoices(request, function(err, response) {
     console.log(response);
   })
 
-//show payment_request from this response
 /*{ 
-    "r_hash": <bytes>,
-    "payment_request": <string>,
-    "add_index": <uint64>,
+    "invoices": <array Invoice>,
+    "last_index_offset": <uint64>,
+    "first_index_offset": <uint64>,
 }*/
+
+/*this is for the tally page
+each invoice has a boolean field "settled" + memo field "candidate n"
+add all candidated to a HashMap<String, Integer> with 0 count in advance. 
+then something like for(invoice: invoices) {
+    if (invoice.settled) votes.put(invoice.memo, votes.get(invoice.memo)++);
+}
+memo is where we store the name of the candidate
+*/

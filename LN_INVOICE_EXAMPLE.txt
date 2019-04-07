@@ -1,0 +1,23 @@
+let invoice = require('lightnode-invoice');
+let input =
+  'lnbc2500u1pvjluezpp5qqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqqqsyqcyq5rqwzqfqypqdq5xysxxatsyp3k7enxv4jsxqzpuaztrnwngzn3kdzw5hydlzf03qdgm2hdq27cqv3agm2awhz5se903vruatfhq77w3ls4evs3ch9zw97j25emudupq63nyw24cg27h2rspfj9srp';
+let result = invoice.decode(input);
+console.log(result);
+/*
+Invoice {
+  fields:
+   [ { type: 1,
+       value: <Buffer 00 01 02 03 04 05 06 07 08 09 00 01 02 03 04 05 06 07 08 09 00 01 02 03 04 05 06 07 08 09 01 02> },
+     { type: 13, value: '1 cup coffee' },
+     { type: 6, value: 60 } ],
+  unknownFields: [],
+  network: 'bc',
+  amount: 0.0025,
+  timestamp: 1496314658,
+  signature:
+   { r: <Buffer e8 96 39 ba 68 14 e3 66 89 d4 b9 1b f1 25 f1 03 51 b5 5d a0 57 b0 06 47 a8 da ba eb 8a 90 c9 5f>,
+     s: <Buffer 16 0f 9d 5a 6e 0f 79 d1 fc 2b 96 42 38 b9 44 e2 fa 4a a6 77 c6 f0 20 d4 66 47 2a b8 42 bd 75 0e>,
+     recoveryFlag: 1 },
+  pubkey: <Buffer 03 e7 15 6a e3 3b 0a 20 8d 07 44 19 91 63 17 7e 90 9e 80 17 6e 55 d9 7a 2f 22 1e de 0f 93 4d d9 ad>,
+  hashData: <Buffer 3c d6 ef 07 74 40 40 55 6e 01 be 64 f6 8f d9 e1 56 5f b4 7d 78 c4 23 08 b1 ee 00 5a ca 5a 0d 86> }
+*/
