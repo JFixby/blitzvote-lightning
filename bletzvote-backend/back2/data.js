@@ -28,13 +28,13 @@ export const add = (x, y) => {
         var balance = lightning.walletBalance(request, function (err, response) {
             console.log(response);
             console.log(err);
+            res.writeHead(200, {'Content-Type': 'text/html'});
+            res.write('Hello World!');
+            res.write(JSON.stringify(response))
+            res.end();
         })
 
 
-        res.writeHead(200, {'Content-Type': 'text/html'});
-        res.write('Hello World!');
-        res.write(JSON.stringify(balance))
-        res.end();
     }).listen(8080);
 
     return x + y
