@@ -42,11 +42,15 @@ class GrpcCaller {
     }
 
     get_invoices() {
-
+        var request = {}
+        lightning.listInvoices(request, function (err, response) {
+            console.log(response);
+        })
+        /*{
+            "invoices": <array Invoice>,
+            "last_index_offset": <uint64>,
+            "first_index_offset": <uint64>,
+        }*/
     }
 }
-
-var o = new GrpcCaller()
-//o.get_wallet_balance()
-//o.add_invoice("candidate 1")
 
