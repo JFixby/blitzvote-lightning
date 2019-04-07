@@ -12,6 +12,8 @@
     "license": "ISC",
     "dependencies": {
         "grpc": "^1.19.0",
-        "koa-router": "^7.4.0"
+        "koa": "^2.7.0",
+        "koa-router": "^7.4.0",
+        "nodemon": "^1.18.10"
     }
 }

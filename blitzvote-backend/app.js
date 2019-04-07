@@ -18,4 +18,4 @@ function postMessage() {
   this.body = "You just called the post method at '/hello'!\n";
 };
 app.use(_.routes()); //Use the routes defined using the router
-app.listen(3000);
+app.listen(8080);
