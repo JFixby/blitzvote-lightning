@@ -3,14 +3,17 @@ import { Link } from 'react-router-dom'
 import { UserSession } from 'blockstack'
 import { appConfig, OTHER_KINGDOMS } from './constants'
 import { loadRuler, loadSubjects } from './utils'
+//grpc = require('./grpc/GrpcCaller') //import { GrpcCaller } from './grpc/GrpcCaller'
 
 class OtherKingdoms extends Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      kingdoms: []
+      kingdoms: [],
+      invoices: []
     }
+    //this.grpc = new GrpcCaller()
     this.userSession = new UserSession({ appConfig })
     this.resolveKingdoms = this.resolveKingdoms.bind(this)
   }
@@ -23,52 +26,67 @@ class OtherKingdoms extends Component {
     const kingdoms = this.state.kingdoms
     OTHER_KINGDOMS.map((kingdom, index) => {
       return loadRuler(this.userSession, kingdom.ruler, kingdom.app)
-      .then(ruler => {
-        kingdoms[index] = {
-          ruler: {
-            username: kingdom.ruler,
-            data: ruler
-          },
-          subjects: [],
-          app: kingdom.app
-        }
+        .then(ruler => {
+          kingdoms[index] = {
+            ruler: {
+              username: kingdom.ruler,
+              data: ruler
+            },
+            subjects: [],
+            app: kingdom.app
+          }
 
-        this.setState({ kingdoms })
-        return loadSubjects(this.userSession, kingdom.ruler, kingdom.app)
-        .then(subjects => {
-            kingdoms[index].subjects = subjects
-            this.setState({ subjects })
+          this.setState({ kingdoms })
+          return loadSubjects(this.userSession, kingdom.ruler, kingdom.app)
+            .then(subjects => {
+              kingdoms[index].subjects = subjects
+              this.setState({ subjects })
+            })
+            .catch(error => {
+              console.log('problem loading subjects')
+              console.log(error)
+              kingdoms[index].subjects = []
+              kingdoms[index].error = true
+              this.setState({ kingdom })
+            })
         })
-        .catch(error => {
-          console.log('problem loading subjects')
+        .catch((error) => {
+          console.log('ruler not found')
           console.log(error)
-          kingdoms[index].subjects = []
-          kingdoms[index].error = true
-          this.setState({ kingdom })
+          kingdoms[index] = {
+            error: true,
+            ruler: {
+              username: kingdom.ruler,
+              data: null,
+            },
+            subjects: [],
+            app: kingdom.app
+          }
         })
-      })
-      .catch((error) => {
-        console.log('ruler not found')
-        console.log(error)
-        kingdoms[index] = {
-          error: true,
-          ruler: {
-            username: kingdom.ruler,
-            data: null,
-          },
-          subjects: [],
-          app: kingdom.app
-        }
-      })
     })
   }
 
   render() {
     const kingdoms = this.state.kingdoms
+    //var invoices = this.grpc.get_invoces()
     return (
       <div className="OtherKingdoms container">
-          <h2>Other kingdoms</h2>
-          <div className="list-group">
+        <h2>Other kingdoms</h2>
+
+        {/* <div className="list-group">
+          {invoices.map((invoice, index) => {
+            return (
+              <div className="list-group-item flex-column align-items-start"
+                key={index}>
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">{index}</h5>
+                </div>
+              </div>
+            )
+          })}
+        </div> */}
+
+        <div className="list-group">
           {kingdoms.length === 0 ?
             <div
               className="list-group-item list-group-item-action flex-column align-items-start"
@@ -80,44 +98,44 @@ class OtherKingdoms extends Component {
             </div>
             :
             <div>
-            {kingdoms.map((kingdom, index) => {
-              const protocol = kingdom.app.split('//')[0]
-              const hostname = kingdom.app.split('//')[1]
-              const planet = kingdom.app
-              const ruler = kingdom.error ? '' : kingdom.ruler
-              const data = ruler ? ruler.data : ''
-              const animal = data ? data.animal : ''
-              if (kingdom.error) {
-                return (
-                  <div
-                    className="list-group-item list-group-item-action flex-column align-items-start"
-                    key={index}
-                  >
-                    <div class="d-flex w-100 justify-content-between">
-                      <h5 class="mb-1">{ kingdom.ruler.username }'s kingdom can't be reached</h5>
+              {kingdoms.map((kingdom, index) => {
+                const protocol = kingdom.app.split('//')[0]
+                const hostname = kingdom.app.split('//')[1]
+                const planet = kingdom.app
+                const ruler = kingdom.error ? '' : kingdom.ruler
+                const data = ruler ? ruler.data : ''
+                const animal = data ? data.animal : ''
+                if (kingdom.error) {
+                  return (
+                    <div
+                      className="list-group-item list-group-item-action flex-column align-items-start"
+                      key={index}
+                    >
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">{kingdom.ruler.username}'s kingdom can't be reached</h5>
+                      </div>
+                      <p class="mb-1">Is the planet {planet} under siege?</p>
                     </div>
-                    <p class="mb-1">Is the planet { planet } under siege?</p>
-                  </div>
-                )
-              } else {
-                return (
-                  <Link
-                    className="list-group-item list-group-item-action flex-column align-items-start"
-                    to={`/kingdom/${protocol}/${hostname}/${kingdom.ruler.username}`}
-                    key={index}
-                  >
-                    <div class="d-flex w-100 justify-content-between">
-                      <h5 class="mb-1">{ kingdom.ruler.username } the { animal ? animal.name : '' }'s kingdom</h5>
-                      <span class="badge badge-primary badge-pill" title="Subjects">{ kingdom.subjects.length }</span>
-                    </div>
-                    <p class="mb-1">From planet { planet }</p>
-                  </Link>
-                )
-              }
-            })}
+                  )
+                } else {
+                  return (
+                    <Link
+                      className="list-group-item list-group-item-action flex-column align-items-start"
+                      to={`/kingdom/${protocol}/${hostname}/${kingdom.ruler.username}`}
+                      key={index}
+                    >
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">{kingdom.ruler.username} the {animal ? animal.name : ''}'s kingdom</h5>
+                        <span class="badge badge-primary badge-pill" title="Subjects">{kingdom.subjects.length}</span>
+                      </div>
+                      <p class="mb-1">From planet {planet}</p>
+                    </Link>
+                  )
+                }
+              })}
             </div>
           }
-          </div>
+        </div>
       </div>
     );
   }
