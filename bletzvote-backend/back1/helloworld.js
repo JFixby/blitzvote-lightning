@@ -1,4 +1,4 @@
-import GrpcCaller from './grpc/GrpcCaller.js'
+import GrpcCaller from './hktn_grpc/GrpcCaller.js'
 
 var grpc_caller = new GrpcCaller()
 

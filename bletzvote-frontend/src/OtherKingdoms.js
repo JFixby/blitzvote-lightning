@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { UserSession } from 'blockstack'
 import { appConfig, OTHER_KINGDOMS } from './constants'
 import { loadRuler, loadSubjects } from './utils'
-//grpc = require('./grpc/GrpcCaller') //import { GrpcCaller } from './grpc/GrpcCaller'
+//hktn_grpc = require('./hktn_grpc/GrpcCaller') //import { GrpcCaller } from './hktn_grpc/GrpcCaller'
 
 class OtherKingdoms extends Component {
 
@@ -13,7 +13,7 @@ class OtherKingdoms extends Component {
       kingdoms: [],
       invoices: []
     }
-    //this.grpc = new GrpcCaller()
+    //this.hktn_grpc = new GrpcCaller()
     this.userSession = new UserSession({ appConfig })
     this.resolveKingdoms = this.resolveKingdoms.bind(this)
   }
@@ -68,7 +68,7 @@ class OtherKingdoms extends Component {
 
   render() {
     const kingdoms = this.state.kingdoms
-    //var invoices = this.grpc.get_invoces()
+    //var invoices = this.hktn_grpc.get_invoces()
     return (
       <div className="OtherKingdoms container">
         <h2>Other kingdoms</h2>
