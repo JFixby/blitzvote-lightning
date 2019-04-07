@@ -9,12 +9,12 @@ class VotesList extends Component {
 
   showVoteQR(e, option) {
     e.preventDefault()
-    console.log("Option: "+option.name+" was picked.")
+    console.log("Option: " + option.name + " was picked.")
 
     //ReactDOM.render(
-  //<QRCode value="hey" />,
-  //document.getElementById('ponies')
-//)
+    //<QRCode value="hey" />,
+    //document.getElementById('ponies')
+    //)
 
     this.setState({
       currentActiveVote: option.name,
@@ -25,17 +25,19 @@ class VotesList extends Component {
   constructor(props) {
     super(props)
 
-    this.state = {currentActiveVote: `nothing`,
-                  currentActiveVoteInvoice: null
-                  }
+    this.state = {
+      currentActiveVote: `nothing`,
+      currentActiveVoteInvoice: null
+    }
     this.showVoteQR = this.showVoteQR.bind(this)
     this.response_google = ""
   }
 
   render() {
     fetch("http://localhost:8080/listInvoices")
-      .then(res =>{ this.response_google = res } )
-    console.log(this.response_google)
+      .then(res => {console.log(res)})
+
+
 
 
     let voteTitle = DEFAULTCONFIGUREDVOTE["title"]
@@ -52,7 +54,7 @@ class VotesList extends Component {
     if (voteMade) {
       return (
         <div className="OptionsList container">
-          <h2>Topic: { voteTitle }</h2> <br/>
+          <h2>Topic: {voteTitle}</h2> <br />
           <h3 className="text-center"> You have already voted on the current topic! </h3>
         </div>
       )
@@ -60,35 +62,35 @@ class VotesList extends Component {
 
     return (
       <div className="OptionsList container">
-          <h2>Topic: { voteTitle }</h2>
-            <div id="qrcode" className="qrCodeContainer text-center">
-              <div id="qractualcontainer"
-                className={this.state.currentActiveVoteInvoice ? "show":"hide"}
-              >
-              <QRCode className="qrCode"
-                  size="250"
-                  bgColor="#000000"
-                  fgColor="#FFFFFF"
-                value={(this.state.currentActiveVoteInvoice !== null) ? this.state.currentActiveVoteInvoice : "Hello!" }
-              />
-              </div>
+        <h2>Topic: {voteTitle}</h2>
+        <div id="qrcode" className="qrCodeContainer text-center">
+          <div id="qractualcontainer"
+            className={this.state.currentActiveVoteInvoice ? "show" : "hide"}
+          >
+            <QRCode className="qrCode"
+              size="250"
+              bgColor="#000000"
+              fgColor="#FFFFFF"
+              value={(this.state.currentActiveVoteInvoice !== null) ? this.state.currentActiveVoteInvoice : "Hello!"}
+            />
+          </div>
 
-            </div>              
-          
-          <div className={this.state.currentActiveVoteInvoice ? "showw text-center":"hidee text-center"} > To vote for {this.state.currentActiveVote}, scan the QR code above, or pay for this invoice:</div>
-          <div className={this.state.currentActiveVoteInvoice ? "showw text-center":"hidee text-center"} > {this.state.currentActiveVoteInvoice} </div>
+        </div>
 
-          <div className="card-deck">
-            {voteOptions.map((option, index) => {
+        <div className={this.state.currentActiveVoteInvoice ? "showw text-center" : "hidee text-center"} > To vote for {this.state.currentActiveVote}, scan the QR code above, or pay for this invoice:</div>
+        <div className={this.state.currentActiveVoteInvoice ? "showw text-center" : "hidee text-center"} > {this.state.currentActiveVoteInvoice} </div>
+
+        <div className="card-deck">
+          {voteOptions.map((option, index) => {
             return (
-              <button 
-                className={this.state.currentActiveVote === option.name ? 'btn btn-block active' :"btn btn-block"}
-                 onClick={(e) => this.showVoteQR(e, option)} >
-              <h4 className="card-header">{ option.name }</h4>
+              <button
+                className={this.state.currentActiveVote === option.name ? 'btn btn-block active' : "btn btn-block"}
+                onClick={(e) => this.showVoteQR(e, option)} >
+                <h4 className="card-header">{option.name}</h4>
               </button>
             )
-            })}
-          </div>
+          })}
+        </div>
       </div>
     );
   }
