@@ -70,6 +70,9 @@ export const add = (x, y) => {
 
             var request = {}
             var balance = lightning.listInvoices(request, function (err, response) {
+                res.header('Access-Control-Allow-Origin', 'localhost');
+                res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+                res.header('Access-Control-Allow-Headers', 'Content-Type');
                 console.log(response);
                 console.log(err);
                 res.writeHead(200, {'Content-Type': 'application/json'});
