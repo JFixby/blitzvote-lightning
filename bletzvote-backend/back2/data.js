@@ -37,10 +37,14 @@ export const add = (x, y) => {
                 console.log(err);
                 res.writeHead(200, {'Content-Type': 'text/html'});
                 // res.write("req: " + JSON.stringify(req));
-                res.write(JSON.stringify(response))
+                if (err) {
+                    res.write(JSON.stringify(err))
+                } else {
+                    res.write(JSON.stringify(response))
+                }
                 res.end();
             })
-
+            return
         }
 
         if ("/addInvoice" == (url + "")) {
@@ -51,9 +55,14 @@ export const add = (x, y) => {
                 console.log(err);
                 res.writeHead(200, {'Content-Type': 'text/html'});
                 // res.write("req: " + JSON.stringify(req));
-                res.write(JSON.stringify(response))
+                if (err) {
+                    res.write(JSON.stringify(err))
+                } else {
+                    res.write(JSON.stringify(response))
+                }
                 res.end();
             })
+            return
         }//
 
 
@@ -65,10 +74,28 @@ export const add = (x, y) => {
                 console.log(err);
                 res.writeHead(200, {'Content-Type': 'text/html'});
                 // res.write("req: " + JSON.stringify(req));
-                res.write(JSON.stringify(response))
+                if (err) {
+                    res.write(JSON.stringify(err))
+                } else {
+                    res.write(JSON.stringify(response))
+                }
                 res.end();
+
             })
+            return
         }//
+
+        {
+            res.writeHead(200, {'Content-Type': 'text/html'});
+            // res.write("req: " + JSON.stringify(req));
+            res.write("<a href=\"/getBallance\">/getBallance</a>")
+            res.write("\n")
+            res.write("<a href=\"/addInvoice\">/addInvoice</a>")
+            res.write("\n")
+            res.write("<a href=\"/listInvoices\">/listInvoices</a>")
+            res.write("\n")
+            res.end();
+        }
 
 
     }).listen(8080);
