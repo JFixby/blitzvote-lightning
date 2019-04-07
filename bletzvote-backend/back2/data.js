@@ -76,10 +76,9 @@ export const add = (x, y) => {
                 console.log(response);
                 console.log(err);
                 res.writeHead(200, {
-                    'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': 'localhost:8080',
-                    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE',
-                    'Access-Control-Allow-Headers': 'Content-Type'
+                    'Content-Type': 'text/plain',
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE'
                 });
                 // res.write("req: " + JSON.stringify(req));
                 if (err) {
