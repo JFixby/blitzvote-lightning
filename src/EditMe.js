@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import './EditMe.css'
 import Card from './Card'
 import { ANIMALS, TERRITORIES } from './constants'
+import { grpc_caller } from './grpc/GrpcCaller'
+
 
 class EditMe extends Component {
 

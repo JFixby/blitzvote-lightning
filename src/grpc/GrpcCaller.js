@@ -53,3 +53,6 @@ class GrpcCaller {
         }*/
     }
 }
+
+var grpc_caller = new GrpcCaller()
+//grpc1.get_invoices()
