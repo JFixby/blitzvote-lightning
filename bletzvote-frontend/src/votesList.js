@@ -34,7 +34,10 @@ class VotesList extends Component {
   }
 
   render() {
-    fetch("http://localhost:8080/listInvoices")
+    fetch("http://localhost:8080/listInvoices",
+        {
+            mode: "no-cors",
+        })
       .then(res => {console.log(res)})
 
 

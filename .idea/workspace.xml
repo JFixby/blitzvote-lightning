@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd22aa30-f0d9-4fda-80aa-cdcb612fc996" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/bletzvote-backend/back2/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/bletzvote-backend/back2/data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bletzvote-frontend/src/votesList.js" beforeDir="false" afterPath="$PROJECT_DIR$/bletzvote-frontend/src/votesList.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,10 +38,10 @@
       <file leaf-file-name="votesList.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bletzvote-frontend/src/votesList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="809">
+              <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
               <folding>
-                <element signature="e#104#137#0" expanded="true" />
+                <element signature="e#113#146#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2191,10 +2191,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bletzvote-frontend/src/votesList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="809">
+          <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
           <folding>
-            <element signature="e#104#137#0" expanded="true" />
+            <element signature="e#113#146#0" expanded="true" />
           </folding>
         </state>
       </provider>
