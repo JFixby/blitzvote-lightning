@@ -35,7 +35,7 @@ export const add = (x, y) => {
             var balance = lightning.walletBalance(request, function (err, response) {
                 console.log(response);
                 console.log(err);
-                res.writeHead(200, {'Content-Type': 'text/html'});
+                res.writeHead(200, {'Content-Type': 'application/json'});
                 // res.write("req: " + JSON.stringify(req));
                 if (err) {
                     res.write(JSON.stringify(err))
@@ -53,7 +53,7 @@ export const add = (x, y) => {
             var balance = lightning.addInvoice(request, function (err, response) {
                 console.log(response);
                 console.log(err);
-                res.writeHead(200, {'Content-Type': 'text/html'});
+                res.writeHead(200, {'Content-Type': 'application/json'});
                 // res.write("req: " + JSON.stringify(req));
                 if (err) {
                     res.write(JSON.stringify(err))
@@ -72,7 +72,7 @@ export const add = (x, y) => {
             var balance = lightning.listInvoices(request, function (err, response) {
                 console.log(response);
                 console.log(err);
-                res.writeHead(200, {'Content-Type': 'text/html'});
+                res.writeHead(200, {'Content-Type': 'application/json'});
                 // res.write("req: " + JSON.stringify(req));
                 if (err) {
                     res.write(JSON.stringify(err))

@@ -20,9 +20,14 @@ class VotesList extends Component {
                   currentActiveVoteInvoice: null
                   }
     this.showVoteQR = this.showVoteQR.bind(this)
+    this.response_google = ""
   }
 
   render() {
+    fetch("http://localhost:8080/listInvoices")
+      .then(res =>{ this.response_google = res } )
+    console.log(this.response_google)
+
 
     let voteTitle = DEFAULTCONFIGUREDVOTE["title"]
     let voteOptions = DEFAULTCONFIGUREDVOTE["options"]
