@@ -19,7 +19,7 @@ class GrpcCaller {
 
     get_wallet_balance() {
         var request = {}
-        lightning.walletBalance(request, function (err, response) {
+        return lightning.walletBalance(request, function (err, response) {
             console.log(response);
         })
     }
