@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cd22aa30-f0d9-4fda-80aa-cdcb612fc996" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/bletzvote-backend/back2/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/bletzvote-backend/back2/data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bletzvote-frontend/src/votesList.js" beforeDir="false" afterPath="$PROJECT_DIR$/bletzvote-frontend/src/votesList.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,13 +23,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="data.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bletzvote-backend/back2/data.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="42" column="45" lean-forward="true" selection-start-line="42" selection-start-column="45" selection-end-line="42" selection-end-column="45" />
+            <state relative-caret-position="307">
+              <caret line="80" column="54" lean-forward="true" selection-start-line="80" selection-start-column="54" selection-end-line="80" selection-end-column="54" />
               <folding>
                 <element signature="e#96#117#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="votesList.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bletzvote-frontend/src/votesList.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+              <folding>
+                <element signature="e#104#137#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -72,6 +85,9 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>hktn</find>
+      <find>local</find>
+      <find>localhost</find>
+      <find>localhost.j</find>
     </findStrings>
     <dirStrings>
       <dir>D:\JS\blt\blitzvote-lightning\bletzvote-backend\back2</dir>
@@ -90,6 +106,7 @@
         <option value="$PROJECT_DIR$/blitzvote-backend/app.js" />
         <option value="$PROJECT_DIR$/bletzvote-backend/back2/GrpcCaller.js" />
         <option value="$PROJECT_DIR$/bletzvote-backend/back2/data.js" />
+        <option value="$PROJECT_DIR$/bletzvote-frontend/src/votesList.js" />
       </list>
     </option>
   </component>
@@ -1831,6 +1848,17 @@
             <path>
               <item name="blitzvote-lightning" type="b2602c69:ProjectViewProjectNode" />
               <item name="blitzvote-lightning" type="462c0819:PsiDirectoryNode" />
+              <item name="bletzvote-frontend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blitzvote-lightning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blitzvote-lightning" type="462c0819:PsiDirectoryNode" />
+              <item name="bletzvote-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blitzvote-lightning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blitzvote-lightning" type="462c0819:PsiDirectoryNode" />
               <item name="blitzvote-backend" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -1918,20 +1946,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bletzvote-backend/back2/start.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bletzvote-backend/back2/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bletzvote-backend/back2/data.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -2162,12 +2176,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/blitzvote-backend/invoices.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/bletzvote-backend/back2/data.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="42" column="45" lean-forward="true" selection-start-line="42" selection-start-column="45" selection-end-line="42" selection-end-column="45" />
+        <state relative-caret-position="307">
+          <caret line="80" column="54" lean-forward="true" selection-start-line="80" selection-start-column="54" selection-end-line="80" selection-end-column="54" />
           <folding>
             <element signature="e#96#117#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bletzvote-frontend/src/votesList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="e#104#137#0" expanded="true" />
           </folding>
         </state>
       </provider>
