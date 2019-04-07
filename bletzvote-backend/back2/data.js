@@ -24,15 +24,51 @@ export const add = (x, y) => {
         // add a HTTP header:
         // var res = grpc_caller.get_wallet_balance()
 
-        var request = {}
-        var balance = lightning.walletBalance(request, function (err, response) {
-            console.log(response);
-            console.log(err);
-            res.writeHead(200, {'Content-Type': 'text/html'});
-            res.write('Hello World!');
-            res.write(JSON.stringify(response))
-            res.end();
-        })
+
+        var url = req.url
+        console.log("url: " + url);
+
+
+        if ("/getBallance" == (url + "")) {
+
+            var request = {}
+            var balance = lightning.walletBalance(request, function (err, response) {
+                console.log(response);
+                console.log(err);
+                res.writeHead(200, {'Content-Type': 'text/html'});
+                // res.write("req: " + JSON.stringify(req));
+                res.write(JSON.stringify(response))
+                res.end();
+            })
+
+        }
+
+        if ("/addInvoice" == (url + "")) {
+
+            var request = {}
+            var balance = lightning.addInvoice(request, function (err, response) {
+                console.log(response);
+                console.log(err);
+                res.writeHead(200, {'Content-Type': 'text/html'});
+                // res.write("req: " + JSON.stringify(req));
+                res.write(JSON.stringify(response))
+                res.end();
+            })
+        }//
+
+
+        if ("/listInvoices" == (url + "")) {
+
+            var request = {}
+            var balance = lightning.listInvoices(request, function (err, response) {
+                console.log(response);
+                console.log(err);
+                res.writeHead(200, {'Content-Type': 'text/html'});
+                // res.write("req: " + JSON.stringify(req));
+                res.write(JSON.stringify(response))
+                res.end();
+            })
+        }//
 
 
     }).listen(8080);
